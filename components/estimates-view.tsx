@@ -164,7 +164,7 @@ export function EstimatesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-primary/10 shrink-0">
-                  <FileText className="h-4 w-4 text-primary" />
+                  <FileText className="h-4 w-4 text-primary" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Total Estimates</p>
               </div>
@@ -177,7 +177,7 @@ export function EstimatesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-chart-2/10 shrink-0">
-                  <DollarSign className="h-4 w-4 text-chart-2" />
+                  <DollarSign className="h-4 w-4 text-chart-2" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Total Value</p>
               </div>
@@ -190,7 +190,7 @@ export function EstimatesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-chart-1/10 shrink-0">
-                  <Send className="h-4 w-4 text-chart-1" />
+                  <Send className="h-4 w-4 text-chart-1" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Sent</p>
               </div>
@@ -203,7 +203,7 @@ export function EstimatesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-chart-2/10 shrink-0">
-                  <FileText className="h-4 w-4 text-chart-2" />
+                  <FileText className="h-4 w-4 text-chart-2" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Accepted</p>
               </div>
@@ -241,8 +241,8 @@ export function EstimatesView() {
                   <SelectItem value="Rejected">Rejected</SelectItem>
                 </SelectContent>
               </Select>
-              <Button className="gap-2" onClick={() => setIsAddDialogOpen(true)}>
-                <FileText className="h-4 w-4" />
+              <Button className="gap-2 rounded-lg sm:rounded-xl h-9 sm:h-10 px-3 sm:px-4" onClick={() => setIsAddDialogOpen(true)}>
+                <FileText className="h-4 w-4" strokeWidth={2} />
                 <span className="hidden sm:inline">New Estimate</span>
               </Button>
             </div>

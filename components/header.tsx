@@ -49,19 +49,20 @@ export function Header({ searchQuery, onSearchChange, onMobileMenuClick }: Heade
   }
 
   return (
-    <header className="flex h-[73px] items-center justify-between border-b border-border bg-card/50 px-4 backdrop-blur-sm sm:px-6 lg:px-8 w-full max-w-full shrink-0">
+    <header className="flex h-[60px] sm:h-[73px] items-center justify-between border-b border-border bg-card/50 px-3 sm:px-4 backdrop-blur-sm lg:px-8 w-full max-w-full shrink-0">
       <Button
         variant="ghost"
         size="icon"
         onClick={onMobileMenuClick}
-        className="lg:hidden h-10 w-10 shrink-0 rounded-xl text-muted-foreground hover:text-foreground mr-2"
+        className="lg:hidden h-9 w-9 sm:h-10 sm:w-10 shrink-0 rounded-lg sm:rounded-xl text-muted-foreground hover:text-foreground hover:bg-sidebar-accent mr-2"
+        aria-label="Open menu"
       >
-        <Menu className="h-5 w-5" />
+        <Menu className="h-5 w-5" strokeWidth={2} />
       </Button>
 
-      <div className="flex flex-1 items-center gap-4 min-w-0">
+      <div className="flex flex-1 items-center gap-3 sm:gap-4 min-w-0">
         <div className="relative w-full max-w-xl">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground pointer-events-none sm:left-4 sm:h-5 sm:w-5" />
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground pointer-events-none" strokeWidth={2} />
           <Input
             type="search"
             placeholder="Search..."
@@ -70,7 +71,7 @@ export function Header({ searchQuery, onSearchChange, onMobileMenuClick }: Heade
               console.log("[v0] Search query:", e.target.value)
               onSearchChange(e.target.value)
             }}
-            className="h-10 pl-9 pr-4 text-sm rounded-xl border-border/50 bg-background/50 backdrop-blur-sm sm:h-11 sm:pl-12 sm:text-base w-full"
+            className="h-9 sm:h-10 pl-9 pr-3 sm:pr-4 text-sm rounded-lg sm:rounded-xl border-border/50 bg-background/50 backdrop-blur-sm w-full"
           />
         </div>
       </div>
@@ -79,9 +80,10 @@ export function Header({ searchQuery, onSearchChange, onMobileMenuClick }: Heade
           variant="ghost"
           size="icon"
           onClick={handleNotificationClick}
-          className="relative h-10 w-10 shrink-0 rounded-xl text-muted-foreground hover:text-foreground hidden sm:flex"
+          className="relative h-9 w-9 sm:h-10 sm:w-10 shrink-0 rounded-lg sm:rounded-xl text-muted-foreground hover:text-foreground hover:bg-sidebar-accent hidden sm:flex"
+          aria-label="Notifications"
         >
-          <Bell className="h-5 w-5" />
+          <Bell className="h-5 w-5" strokeWidth={2} />
           <Badge className="absolute -right-1 -top-1 h-5 w-5 rounded-full p-0 text-xs flex items-center justify-center bg-accent text-accent-foreground">
             3
           </Badge>
@@ -90,15 +92,16 @@ export function Header({ searchQuery, onSearchChange, onMobileMenuClick }: Heade
           variant="ghost"
           size="icon"
           onClick={toggleTheme}
-          className="h-10 w-10 shrink-0 rounded-xl text-muted-foreground hover:text-foreground"
+          className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 rounded-lg sm:rounded-xl text-muted-foreground hover:text-foreground hover:bg-sidebar-accent"
+          aria-label="Toggle theme"
         >
-          {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          {theme === "dark" ? <Sun className="h-5 w-5" strokeWidth={2} /> : <Moon className="h-5 w-5" strokeWidth={2} />}
         </Button>
-        <div className="ml-2 h-8 w-px bg-border hidden sm:block" />
+        <div className="ml-1 sm:ml-2 h-6 sm:h-8 w-px bg-border hidden sm:block" />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" size="icon" className="h-10 w-10 shrink-0 rounded-xl">
-              <User className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 rounded-lg sm:rounded-xl hover:bg-sidebar-accent" aria-label="User menu">
+              <User className="h-5 w-5" strokeWidth={2} />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56">

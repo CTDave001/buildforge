@@ -71,12 +71,12 @@ export function KpiCards() {
                   </p>
                   <p className="text-2xl font-bold tracking-tight text-balance sm:text-3xl">{kpi.value}</p>
                   <div className="flex items-center gap-1.5 text-xs sm:text-sm">
-                    <TrendIcon className={cn("h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5", trendColors[kpi.trend])} />
+                    <TrendIcon className={cn("h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5", trendColors[kpi.trend])} strokeWidth={2.5} />
                     <span className="text-muted-foreground truncate">{kpi.change}</span>
                   </div>
                 </div>
                 <div className={cn("rounded-xl p-2.5 shrink-0 transition-transform group-hover:scale-110 sm:p-3", kpi.bgColor)}>
-                  <kpi.icon className={cn("h-5 w-5 sm:h-6 sm:w-6", kpi.color)} />
+                  <kpi.icon className={cn("h-5 w-5 sm:h-6 sm:w-6", kpi.color)} strokeWidth={2} />
                 </div>
               </div>
             </CardContent>

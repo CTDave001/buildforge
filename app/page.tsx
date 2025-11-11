@@ -18,7 +18,7 @@ export default function DashboardPage() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-background overflow-hidden w-full max-w-full">
+    <div className="flex h-screen bg-background w-full">
       <Sidebar
         activeView={activeView}
         onViewChange={(view) => {
@@ -28,14 +28,14 @@ export default function DashboardPage() {
         mobileOpen={mobileSidebarOpen}
         onMobileToggle={setMobileSidebarOpen}
       />
-      <div className="flex flex-1 flex-col overflow-hidden min-w-0">
+      <div className="flex flex-1 flex-col min-w-0 h-screen overflow-hidden">
         <Header
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onMobileMenuClick={() => setMobileSidebarOpen(!mobileSidebarOpen)} // Added mobile menu toggle
         />
-        <main className="flex-1 overflow-y-auto overflow-x-hidden">
-          <div className="mx-auto max-w-[1600px] space-y-6 p-4 sm:p-6 lg:space-y-8 lg:p-8 w-full">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden webkit-overflow-scrolling-touch">
+          <div className="mx-auto max-w-[1600px] space-y-6 p-4 sm:p-6 lg:space-y-8 lg:p-8 w-full min-h-full">
             <div className="space-y-2">
               <h1 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl lg:text-4xl">{activeView}</h1>
               <p className="text-sm text-muted-foreground sm:text-base lg:text-lg">

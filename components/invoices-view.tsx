@@ -189,7 +189,7 @@ export function InvoicesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-primary/10 shrink-0">
-                  <Receipt className="h-4 w-4 text-primary" />
+                  <Receipt className="h-4 w-4 text-primary" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Total Invoiced</p>
               </div>
@@ -202,7 +202,7 @@ export function InvoicesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-chart-2/10 shrink-0">
-                  <CheckCircle className="h-4 w-4 text-chart-2" />
+                  <CheckCircle className="h-4 w-4 text-chart-2" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Paid</p>
               </div>
@@ -215,7 +215,7 @@ export function InvoicesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-chart-4/10 shrink-0">
-                  <AlertCircle className="h-4 w-4 text-chart-4" />
+                  <AlertCircle className="h-4 w-4 text-chart-4" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Outstanding</p>
               </div>
@@ -228,7 +228,7 @@ export function InvoicesView() {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="rounded-lg p-2 bg-destructive/10 shrink-0">
-                  <AlertCircle className="h-4 w-4 text-destructive" />
+                  <AlertCircle className="h-4 w-4 text-destructive" strokeWidth={2} />
                 </div>
                 <p className="text-xs sm:text-sm font-medium text-muted-foreground truncate">Overdue</p>
               </div>
@@ -268,8 +268,8 @@ export function InvoicesView() {
                   <SelectItem value="Overdue">Overdue</SelectItem>
                 </SelectContent>
               </Select>
-              <Button className="gap-2" onClick={() => setIsAddDialogOpen(true)}>
-                <Receipt className="h-4 w-4" />
+              <Button className="gap-2 rounded-lg sm:rounded-xl h-9 sm:h-10 px-3 sm:px-4" onClick={() => setIsAddDialogOpen(true)}>
+                <Receipt className="h-4 w-4" strokeWidth={2} />
                 <span className="hidden sm:inline">New Invoice</span>
               </Button>
             </div>

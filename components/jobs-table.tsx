@@ -129,9 +129,9 @@ export function JobsTable({ onSelectJob, searchQuery = "" }: JobsTableProps) {
                 : "Manage and track your construction projects"}
             </p>
           </div>
-          <Button onClick={handleViewAll} className="rounded-xl shadow-lg shadow-primary/20 h-9 text-sm sm:h-10">
+          <Button onClick={handleViewAll} className="rounded-lg sm:rounded-xl shadow-lg shadow-primary/20 h-9 text-sm sm:h-10 px-3 sm:px-4">
             <span className="hidden sm:inline">View All</span>
-            <ArrowUpRight className="h-4 w-4 sm:ml-2" />
+            <ArrowUpRight className="h-4 w-4 sm:ml-2" strokeWidth={2} />
           </Button>
         </div>
       </CardHeader>

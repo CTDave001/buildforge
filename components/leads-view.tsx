@@ -190,7 +190,7 @@ export function LeadsView() {
               <p className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wide">Pipeline Value</p>
               <p className="text-2xl sm:text-3xl font-bold">$465,000</p>
               <p className="text-xs sm:text-sm text-chart-2 flex items-center gap-1">
-                <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" />
+                <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" strokeWidth={2.5} />
                 +18% this month
               </p>
             </div>
@@ -230,8 +230,8 @@ export function LeadsView() {
                 <SelectItem value="Cold">Cold</SelectItem>
               </SelectContent>
             </Select>
-            <Button className="gap-2 whitespace-nowrap" onClick={() => setIsAddDialogOpen(true)}>
-              <UserPlus className="h-4 w-4" />
+            <Button className="gap-2 whitespace-nowrap rounded-lg sm:rounded-xl h-9 sm:h-10 px-3 sm:px-4" onClick={() => setIsAddDialogOpen(true)}>
+              <UserPlus className="h-4 w-4" strokeWidth={2} />
               <span className="hidden sm:inline">Add Lead</span>
             </Button>
           </div>

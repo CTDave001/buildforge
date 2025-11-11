@@ -40,21 +40,21 @@ export function Sidebar({ activeView, onViewChange, mobileOpen = false, onMobile
           collapsed ? "w-[72px]" : "w-72",
         )}
       >
-        <div className="flex h-[73px] items-center justify-between border-b border-sidebar-border px-5">
+        <div className="flex h-[60px] sm:h-[73px] items-center justify-between border-b border-sidebar-border px-4 sm:px-5">
           {!collapsed && (
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20">
-                <Building2 className="h-6 w-6 text-primary-foreground" />
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-primary shadow-lg shadow-primary/20">
+                <Building2 className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" strokeWidth={2} />
               </div>
-              <div className="flex flex-col">
-                <span className="text-base font-bold tracking-tight text-sidebar-foreground">BuildForge</span>
-                <span className="text-xs text-muted-foreground">Construction CRM</span>
+              <div className="flex flex-col min-w-0">
+                <span className="text-sm sm:text-base font-bold tracking-tight text-sidebar-foreground truncate">BuildForge</span>
+                <span className="text-xs text-muted-foreground truncate">Construction CRM</span>
               </div>
             </div>
           )}
           {collapsed && (
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20">
-              <Building2 className="h-6 w-6 text-primary-foreground" />
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20">
+              <Building2 className="h-6 w-6 text-primary-foreground" strokeWidth={2} />
             </div>
           )}
           {!collapsed && (
@@ -72,9 +72,10 @@ export function Sidebar({ activeView, onViewChange, mobileOpen = false, onMobile
               variant="ghost"
               size="icon"
               onClick={() => onMobileToggle?.(false)}
-              className="lg:hidden h-8 w-8 shrink-0 text-muted-foreground hover:text-foreground"
+              className="lg:hidden h-8 w-8 shrink-0 text-muted-foreground hover:text-foreground hover:bg-sidebar-accent rounded-lg"
+              aria-label="Close menu"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" strokeWidth={2} />
             </Button>
           )}
         </div>
@@ -87,13 +88,18 @@ export function Sidebar({ activeView, onViewChange, mobileOpen = false, onMobile
                 onViewChange(item.label)
               }}
               className={cn(
-                "group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-all duration-200",
+                "group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 sm:py-3 text-sm font-medium transition-all duration-200",
                 activeView === item.label
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
                   : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
               )}
+              aria-label={item.label}
             >
-              <item.icon className={cn("h-5 w-5 shrink-0 transition-transform group-hover:scale-110")} />
+              <item.icon
+                className={cn("h-5 w-5 shrink-0 transition-transform group-hover:scale-110")}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
               {!collapsed && <span className="text-balance">{item.label}</span>}
             </button>
           ))}
